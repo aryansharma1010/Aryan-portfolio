@@ -1,0 +1,45 @@
+import { chromium } from 'playwright';
+const DIR = process.env.DIR;
+
+const browser = await chromium.launch();
+const page = await browser.newPage();
+await page.setViewportSize({ width: 1400, height: 900 });
+await page.goto('http://localhost:3000', { waitUntil: 'networkidle' });
+const title = await page.title();
+console.log('TITLE:', title);
+const navLinks = await page.$$('.nav-links a');
+console.log('NAV LINKS:', navLinks.length);
+const themeToggle = await page.$('#themeToggle');
+console.log('THEME TOGGLE:', !!themeToggle);
+await page.screenshot({ path: DIR + '/1-hero-dark.png' });
+await themeToggle.click();
+await page.waitForTimeout(500);
+const theme = await page.getAttribute('html', 'data-theme');
+console.log('THEME AFTER TOGGLE:', theme);
+await page.screenshot({ path: DIR + '/2-hero-light.png' });
+await themeToggle.click();
+await page.waitForTimeout(500);
+await page.evaluate(() => document.getElementById('impact')?.scrollIntoView());
+await page.waitForTimeout(1000);
+await page.screenshot({ path: DIR + '/3-impact.png' });
+await page.evaluate(() => document.getElementById('featured')?.scrollIntoView());
+await page.waitForTimeout(1000);
+await page.screenshot({ path: DIR + '/4-featured.png' });
+await page.evaluate(() => document.getElementById('work')?.scrollIntoView());
+await page.waitForTimeout(1000);
+await page.screenshot({ path: DIR + '/5-work.png' });
+await page.evaluate(() => document.getElementById('contact')?.scrollIntoView());
+await page.waitForTimeout(1000);
+await page.screenshot({ path: DIR + '/6-contact.png' });
+const convoBtn = await page.$('.contact-cta .btn.accent');
+if (convoBtn) {
+  await convoBtn.click();
+  await page.waitForTimeout(500);
+  await page.screenshot({ path: DIR + '/7-modal.png' });
+  console.log('MODAL OPENED');
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(300);
+  console.log('MODAL ESC CLOSED');
+}
+await browser.close();
+console.log('ALL DONE');

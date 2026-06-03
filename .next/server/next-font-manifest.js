@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/shubham/Documents/GitHub/Aryan-portfolio/src/app/layout\":[\"static/media/9d5a263311222317-s.p.woff2\",\"static/media/313510e2713fb214-s.p.woff2\",\"static/media/9cc5b37ab1350db7-s.p.woff2\",\"static/media/e6099e249fd938cc-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
