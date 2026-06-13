@@ -11,6 +11,7 @@ import Impact from '@/components/Impact/Impact';
 import AgraRally from '@/components/FeaturedProject/AgraRally';
 import GoldenAces from '@/components/FeaturedProject/GoldenAces';
 import GeeksForGeeks from '@/components/FeaturedProject/GeeksForGeeks';
+import NeoZapCRM from '@/components/FeaturedProject/NeoZapCRM';
 import WorkGrid from '@/components/WorkGrid/WorkGrid';
 import Experience from '@/components/Experience/Experience';
 import Toolkit from '@/components/Toolkit/Toolkit';
@@ -35,6 +36,7 @@ export default function HomePage() {
         <AgraRally />
         <GoldenAces />
         <GeeksForGeeks />
+        <NeoZapCRM />
         <WorkGrid />
         <Experience />
         <Toolkit />

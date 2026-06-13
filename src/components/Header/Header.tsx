@@ -31,6 +31,7 @@ export default function Header() {
             <a href="#featured" onClick={closeNav}>Rally</a>
             <a href="#golden-aces" onClick={closeNav}>Golden Aces</a>
             <a href="#geeksforgeeks" onClick={closeNav}>GFG</a>
+            <a href="#crm" onClick={closeNav}>CRM</a>
             <a href="#work" onClick={closeNav}>Work</a>
             <a href="#experience" onClick={closeNav}>Experience</a>
             <a href="#contact" onClick={closeNav}>Contact</a>
